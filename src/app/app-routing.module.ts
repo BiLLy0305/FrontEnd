@@ -7,9 +7,10 @@ import { EditarComponent } from './vistas/editar/editar.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'lista', pathMatch:'full'},
-  {path:'lista', component:ListaComponent},
-  {path:'nuevo', component:NuevoComponent},
-  {path:'editar/:codigo', component:EditarComponent},
+  { path:'lista', component:ListaComponent},
+  { path:'nuevo', component:NuevoComponent},
+  { path:'editar/:codigo', component:EditarComponent}
+
 ];
 
 @NgModule({

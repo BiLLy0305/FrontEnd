@@ -28,11 +28,14 @@ export class ListaComponent implements OnInit {
   }
 
   editarEmpresa(id){
-    this.router.navigate(['editar'],id);
+    this.router.navigate(['editar',id]);
   }
 
   eliminarEmpresa(id){
-
+    this.api.deletePatient(id);
+    this.api.getEmpresas().subscribe(data => {
+        this.listaEmpresas = data;
+    })
   }
 
 }

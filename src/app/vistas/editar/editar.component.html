@@ -1,1 +1,68 @@
-<p>editar works!</p>
+
+
+<div class="body">
+    <div class="div container">
+    
+        <form  [formGroup]="editarForm"  (ngSubmit)="postForm(editarForm.value)">
+            <br>
+            <div class="container">
+                <div class="row">
+                  <div class="col">
+                   <h1>Editar Empresa</h1>
+                        <br>
+
+                        <div class="form-group" [hidden]="true">
+                            <label for="exampleFormControlInput1">Id</label>
+                            <input type="text" class="form-control" placeholder="Id" formControlName="id">
+                        </div>
+
+                        <div class="form-group" >
+                            <label for="exampleFormControlInput1">Nombre Comercial</label>
+                            <input type="text" class="form-control" placeholder="Nombre Comercial" formControlName="nombre_comercial">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Telefono</label>
+                            <input type="text" class="form-control" placeholder="Telefono" formControlName="telefono">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">nit</label>
+                            <input type="text" class="form-control" placeholder="Nit" formControlName="nit">
+                        </div>
+                  </div>
+    
+                  <div class="col">
+                    <br>
+                    <button type="button" class="btn-circle" style="color: white" (click)="salir()">Cancelar</button>  
+                    <button type="submit" class="btn-circle" style="color: white">Guardar</button>
+                   
+                    <br>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Razon Social</label>
+                        <input type="text" class="form-control" placeholder="Razon Social" formControlName="razon_social">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Correo Electronico</label>
+                        <input  [disabled]="true" [readonly]="true" type="text" class="form-control" placeholder="Correo Electronico" formControlName="correo">
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Estado</label>
+                        <input type="text" class="form-control" placeholder="Estado" formControlName="estado">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Direccion</label>
+                    <input type="text" class="form-control" placeholder="Direccion" formControlName="direccion">
+                </div>
+                </div>
+              </div>
+           
+            <br><br>
+        </form>
+    
+    </div>
+    </div>
+    

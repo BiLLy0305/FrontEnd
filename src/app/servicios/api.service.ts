@@ -22,11 +22,27 @@ export class ApiService {
   constructor(private http:HttpClient) { }
 
   getEmpresas():Observable<EmpresaI[]>{
-    
-      console.log('Get Empresas');
       return this.http.get<EmpresaI[]>(this.direccion,{'headers': this.headers});
-    
   }
 
+  postEmpresa(form:EmpresaI):Observable<EmpresaI>{
+    return this.http.post<EmpresaI>(this.direccion,form,{'headers': this.headers});
+  }
+
+  getEmpresaById(codigo:any):Observable<EmpresaI>{
+    let direccionC = this.direccion + '/' + codigo;
+    return this.http.get<EmpresaI>(direccionC,{'headers': this.headers});
+  }
+
+  putEmpresa(form:EmpresaI):Observable<EmpresaI>{
+    return this.http.put<EmpresaI>(this.direccion+ '/'+form.id,form,{'headers': this.headers}   );
+  }
+
+  
+  deletePatient(codigo){
+    return this.http.delete(this.direccion+ '/'+codigo,{'headers': this.headers}).subscribe(data =>{
+      console.log(data);
+    });
+  }
 
 }
