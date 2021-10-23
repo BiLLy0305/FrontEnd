@@ -1,1 +1,56 @@
-<p>lista works!</p>
+
+<div class="container">
+
+    <br>
+      <div class="box" style="height: 100px;">
+        <br>
+        <div class="left">
+          <h4 style="color: white;">   Gestion de Empresas </h4>
+         
+          <h4 style="color: white;">  Agregar, Editar o Eliminar Empresas</h4>
+    
+             </div>
+          <div class="right">
+            <button  type="button" class="btn-circle" style="color: white" (click)="nuevaEmpresa()" >Nueva Empresa</button>
+          </div>
+          <div class="center">
+            
+          </div>
+      </div>
+        <br>
+        <br>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Email</th>
+                <th scope="col">Nit</th>
+                <th scope="col">Acciones</th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let empresa of listaEmpresas">
+                <th scope="row">{{empresa.id}}</th>
+                <td>{{empresa.estado}}</td>
+                <td>{{empresa.nombre_comercial}}</td>
+                <td>{{empresa.correo}}</td>
+                <td>{{empresa.nit}}</td>
+              
+                <td>
+                  <button class="btn btn-lg" style="background-color:transparent;" (click)="editarEmpresa(empresa.id)">
+                    <i class="fa fa-edit"></i> Editar
+                 </button>
+              
+                 <button class="btn btn-lg" style="background-color:transparent;" (click)="eliminarEmpresa(empresa.id)">
+                  <i class="fa fa-delete"></i> Eliminar
+               </button>
+  
+             
+              </td>
+    
+              </tr>
+            </tbody>
+          </table>
+    </div>
